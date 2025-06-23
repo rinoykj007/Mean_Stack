@@ -1,9 +1,7 @@
 <div class="container">
   <h1>Employees List</h1>
 
-  <div *ngIf="loading" class="loading">
-    Loading employees...
-  </div>
+  <div *ngIf="loading" class="loading">Loading employees...</div>
 
   <div *ngIf="error" class="error">
     {{ error }}
@@ -14,7 +12,10 @@
     No employees found. Add some employees!
   </div>
 
-  <table *ngIf="!loading && !error && employees.length > 0" class="employee-table">
+  <table
+    *ngIf="!loading && !error && employees.length > 0"
+    class="employee-table"
+  >
     <thead>
       <tr>
         <th>Name</th>
@@ -27,10 +28,14 @@
       <tr *ngFor="let employee of employees">
         <td>{{ employee.name }}</td>
         <td>{{ employee.position }}</td>
-        <td>{{ employee.level || 'Junior' }}</td>
+        <td>{{ employee.level || "Junior" }}</td>
         <td class="action-buttons">
-          <button class="edit-button" (click)="onEdit(employee._id || '')">Edit</button>
-          <button class="delete-button" (click)="onDelete(employee._id || '')">Delete</button>
+          <button class="edit-button" (click)="onEdit(employee._id || '')">
+            Edit
+          </button>
+          <button class="delete-button" (click)="onDelete(employee._id || '')">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>

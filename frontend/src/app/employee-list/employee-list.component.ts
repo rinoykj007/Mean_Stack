@@ -17,6 +17,7 @@ export class EmployeeListComponent implements OnInit {
   
   @Output() editEmployee = new EventEmitter<string>();
   @Output() deleteEmployee = new EventEmitter<string>();
+  @Output() addNew = new EventEmitter<void>();
   
   constructor(private employeeService: EmployeeService) {}
   
@@ -55,5 +56,7 @@ export class EmployeeListComponent implements OnInit {
     }
   }
   
-  // onAddNew method removed as it's no longer needed
+  onAddNew(): void {
+    this.addNew.emit();
+  }
 }

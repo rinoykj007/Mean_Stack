@@ -9,6 +9,15 @@
     >
       View Employees
     </button>
+    
+    <!-- Show Add a New Employee button only when in list view -->
+    <button
+      *ngIf="showEmployeeList"
+      class="view-toggle-button active"
+      (click)="showEmployeeList = false"
+    >
+      Add a New Employee
+    </button>
   </div>
 
   <div class="error-container" *ngIf="error">
@@ -139,6 +148,7 @@
     <app-employee-list
       (editEmployee)="editEmployee($event); showEmployeeList = false"
       (deleteEmployee)="deleteEmployee($event)"
+      (addNew)="showEmployeeList = false"
     ></app-employee-list>
   </div>
 </div>
