@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Employees List</h1>
+
+  <div *ngIf="loading" class="loading">
+    Loading employees...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+    <button (click)="loadEmployees()">Try Again</button>
+  </div>
+
+  <div *ngIf="!loading && !error && employees.length === 0" class="no-data">
+    No employees found. Add some employees!
+  </div>
+
+  <table *ngIf="!loading && !error && employees.length > 0" class="employee-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Level</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.position }}</td>
+        <td>{{ employee.level || 'Junior' }}</td>
+        <td class="action-buttons">
+          <button class="edit-button" (click)="onEdit(employee._id || '')">Edit</button>
+          <button class="delete-button" (click)="onDelete(employee._id || '')">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 'Add a New Employee' button removed as it's now handled in the parent component -->
+</div>

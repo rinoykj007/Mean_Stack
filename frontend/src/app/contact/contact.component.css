@@ -1,0 +1,234 @@
+.employee-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #3f51b5;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  margin: 20px 0;
+  gap: 30px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hide the default radio button */
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom radio button */
+.radio-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Selected state */
+.radio-circle.selected {
+  border-color: #e91e63;
+}
+
+/* Inner dot */
+.radio-circle.selected .radio-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #e91e63;
+  border-radius: 50%;
+}
+
+.radio-label {
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.add-button {
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #d81b60;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.add-button:disabled {
+  background-color: #f8bbd0;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* View toggle buttons */
+.view-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.view-toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.view-toggle-button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.view-toggle-button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.view-toggle-button.active {
+  background-color: #4285f4;
+  color: white;
+  border-color: #4285f4;
+}
+
+.view-toggle-button:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+.no-employees-message {
+  text-align: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+app-employee-list {
+  display: block;
+  margin-top: 20px;
+}
+
+.level-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.junior {
+  background-color: #e6f7ff;
+  color: #0066cc;
+}
+
+.mid {
+  background-color: #fff7e6;
+  color: #cc7700;
+}
+
+.senior {
+  background-color: #f6e6ff;
+  color: #6600cc;
+}
+
+/* Level button styles */
+.level-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.level-button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.level-button:hover {
+  background-color: #e8e8e8;
+}
+
+.level-button.active {
+  background-color: #3f51b5;
+  color: white;
+  border-color: #3f51b5;
+}
+
+.level-button.active:hover {
+  background-color: #303f9f;
+}
+
+.error {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+}
